@@ -7,13 +7,12 @@ branches:
   only:
   - master
 
-#cache:
-#  directories:
-#    - node_modules
+cache:
+  directories:
+    - node_modules
 
 install:
   - npm install
-  - npm install SavjeeTutorials/SavjeeCoin
 
 script:
   - npm run prod
