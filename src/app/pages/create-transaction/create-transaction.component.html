@@ -1,0 +1,33 @@
+<div class="container">
+	<h1>Create transaction</h1>
+	<p>Transfer some money to someone!</p>
+
+	<br>
+
+	<div class="form-group">
+	    <label for="fromAddress">From</label>
+	    <input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" [(ngModel)]="ownWalletKey.publicKey" disabled>
+	    <small id="fromAddressHelp" class="form-text text-muted">
+	    	You can only send money from your own wallet (the one of which you have both the public and private key)
+	    </small>
+  	</div>
+
+  	<div class="form-group">
+	    <label for="toAddress">To</label>
+	    <input type="text" class="form-control" id="toAddress" aria-describedby="toAddressHelp" [(ngModel)]="newTx.toAddress">
+	    <small id="toAddressHelp" class="form-text text-muted">
+	    	The address of the wallet where you want to send the money to.
+	    </small>
+  	</div>
+
+  	<div class="form-group">
+	    <label for="amount">Amount</label>
+	    <input type="number" class="form-control" id="amount" aria-describedby="amountHelp" [(ngModel)]="newTx.amount">
+	    <small id="amountHelp" class="form-text text-muted">
+	    	You can transfer any amount. Account balance is not checked in this demo. Have at it!
+	    </small>
+  	</div>
+
+  	<button (click)="createTransaction()" type="submit" class="btn btn-primary">Sign & create transaction</button>
+
+</div>

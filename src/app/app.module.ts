@@ -10,6 +10,8 @@ import { BlockchainViewerComponent } from './pages/blockchain-viewer/blockchain-
 import { BlockchainService } from './services/blockchain.service';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
+import { CreateTransactionComponent } from './pages/create-transaction/create-transaction.component';
+import { CreateTransactionSuccessComponent } from './pages/create-transaction-success/create-transaction-success.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { TransactionsTableComponent } from './components/transactions-table/tran
     BlockViewComponent,
     BlockchainViewerComponent,
     SettingsComponent,
-    TransactionsTableComponent
+    TransactionsTableComponent,
+    CreateTransactionComponent,
+    CreateTransactionSuccessComponent
   ],
   imports: [
     BrowserModule,
