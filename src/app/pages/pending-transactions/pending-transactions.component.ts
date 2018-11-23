@@ -19,9 +19,7 @@ export class PendingTransactionsComponent implements OnInit {
 	}
 
 	minePendingTransactions(){
-		this.blockchainService.blockchainInstance.minePendingTransactions(
-			this.blockchainService.walletKeys[0].publicKey
-		);
+		this.blockchainService.minePendingTransactions();
 		this.router.navigate(['/']);
 	}
 
