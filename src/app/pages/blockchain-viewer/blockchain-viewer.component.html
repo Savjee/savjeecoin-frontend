@@ -1,0 +1,86 @@
+<div class="container">
+	<h1>Blocks on chain</h1>
+	<p>Each card represents a block on the chain.</p>
+</div>
+
+<div class="container" style="overflow-x: scroll;white-space: nowrap;">
+  <div class="card" style="width: 18rem; display:inline-block; margin: 0 10px 0 0;" *ngFor="let block of blocks" [class.border-primary]="isSelectedBlock(block)" (click)="showTransactions(block)">
+    <div class="card-body">
+      <h5 class="card-title">Block {{ getBlockNumber(block) }}</h5>
+    </div>
+
+     <ul class="list-group list-group-flush">
+	    <li class="list-group-item">
+	    	<span class="">Hash</span>
+	    	<br>
+	    	<div class="text-truncate text-muted">
+	    		<small>{{ block.hash }}</small>
+	    	</div>
+
+			<br>
+			<span class="">Hash of previous block</span>
+	    	<br>
+
+	    	<div class="text-truncate text-muted">
+	    		<small>{{ block.previousHash }}</small>
+	    	</div>
+	    </li>
+
+	    <li class="list-group-item">
+	    	<span class="">Nonce</span><br>
+	    	<div class="text-truncate text-muted">
+	    		<small>{{ block.nonce }}</small>
+	    	</div>
+	    </li>
+
+	    <li class="list-group-item">
+	    	<span class="">Timestamp</span><br>
+	    	<div class="text-truncate text-muted">
+	    		<small>{{ block.timestamp }}</small>
+	    	</div>
+	    </li>
+	  </ul>
+
+	  <div class="card-body">
+	  	<span class="card-link" (click)="showTransactions(block);" *ngIf="!blockHasTx(block)">Block has no transactions</span>
+
+	    <a href="#" class="card-link" (click)="showTransactions(block);" *ngIf="blockHasTx(block)">Includes {{block.transactions.length}} transactions</a>
+	  </div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="container">
+	<h1>Transactions inside block {{ getBlockNumber(selectedBlock) }}</h1>
+	<p *ngIf="!selectedBlockHasTx()">This block has no transactions</p>
+	<table class="table" *ngIf="selectedBlockHasTx()">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">From</th>
+	      <th scope="col">To</th>
+	      <th scope="col">Amount</th>
+	      <th scope="col">Timestamp</th>
+	      <th scope="col">Valid?</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr *ngFor="let tx of selectedBlock.transactions; index as index">
+	      <td>{{index}}</td>
+	      <td>{{tx.fromAddress}}</td>
+	      <td>{{tx.toAddress}}</td>
+	      <td>{{tx.amount}}</td>
+	      <td>
+	      	{{tx.timestamp}}<br>
+	      	<span class="text-muted"><small>{{tx.timestamp |date:'MMM d, y, HH:mm'}}</small></span>
+	      </td>
+	      <td>
+	      	<span *ngIf="tx.isValid()">✓</span>
+	      	<span *ngIf="!tx.isValid()">✗</span>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+</div>
+
