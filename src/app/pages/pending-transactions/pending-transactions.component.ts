@@ -19,7 +19,9 @@ export class PendingTransactionsComponent implements OnInit {
 	}
 
 	minePendingTransactions(){
+		this.miningInProgress = true;
 		this.blockchainService.minePendingTransactions();
+		this.miningInProgress = false;
 		this.router.navigate(['/']);
 	}
 
