@@ -9,13 +9,15 @@ import { BlockchainViewerComponent } from './pages/blockchain-viewer/blockchain-
 
 import { BlockchainService } from './services/blockchain.service';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlockViewComponent,
     BlockchainViewerComponent,
-    SettingsComponent
+    SettingsComponent,
+    TransactionsTableComponent
   ],
   imports: [
     BrowserModule,

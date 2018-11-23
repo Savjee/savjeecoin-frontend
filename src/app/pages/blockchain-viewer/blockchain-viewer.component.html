@@ -16,34 +16,9 @@
 
 <div class="container">
 	<h1>Transactions inside block {{ getBlockNumber(selectedBlock) }}</h1>
-	<p *ngIf="!selectedBlockHasTx()">This block has no transactions</p>
-	<table class="table" *ngIf="selectedBlockHasTx()">
-	  <thead>
-	    <tr>
-	      <th scope="col">#</th>
-	      <th scope="col">From</th>
-	      <th scope="col">To</th>
-	      <th scope="col">Amount</th>
-	      <th scope="col">Timestamp</th>
-	      <th scope="col">Valid?</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr *ngFor="let tx of selectedBlock.transactions; index as index">
-	      <td>{{index}}</td>
-	      <td>{{tx.fromAddress}}</td>
-	      <td>{{tx.toAddress}}</td>
-	      <td>{{tx.amount}}</td>
-	      <td>
-	      	{{tx.timestamp}}<br>
-	      	<span class="text-muted"><small>{{tx.timestamp |date:'MMM d, y, HH:mm'}}</small></span>
-	      </td>
-	      <td>
-	      	<span *ngIf="tx.isValid()">✓</span>
-	      	<span *ngIf="!tx.isValid()">✗</span>
-	      </td>
-	    </tr>
-	  </tbody>
-	</table>
+
+	<app-transactions-table
+		[transactions]="selectedBlock.transactions"
+	></app-transactions-table>
 </div>
 
