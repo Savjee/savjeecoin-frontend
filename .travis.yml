@@ -15,6 +15,7 @@ install:
   - npm install -g yarn
 
 script:
+  - yarn install
   - yarn build --base-href https://savjee.github.io/savjeecoin-frontend/
 
 deploy:
