@@ -17,9 +17,17 @@
       <td class="text-truncate" style="max-width: 100px;">
         {{tx.fromAddress}}
         <span *ngIf="tx.fromAddress === null">System</span>
+
+        <span class="text-muted" *ngIf="blockchainService.addressIsFromCurrentUser(tx.fromAddress)">
+          <br><small>(That's yours!)</small>
+        </span>
       </td>
       <td class="text-truncate" style="max-width: 100px;">
           {{tx.toAddress}}
+
+          <span class="text-muted" *ngIf="blockchainService.addressIsFromCurrentUser(tx.toAddress)">
+            <br><small>(That's yours!)</small>
+          </span>
       </td>
       <td>
         {{tx.amount}}
