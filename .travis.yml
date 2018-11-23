@@ -13,9 +13,10 @@ branches:
 
 install:
   - npm install
+  - npm install SavjeeTutorials/SavjeeCoin
 
 script:
-  - ng build --base-href https://savjee.github.io/savjeecoin-frontend/ --prod
+  - npm run prod
 
 deploy:
   provider: pages
