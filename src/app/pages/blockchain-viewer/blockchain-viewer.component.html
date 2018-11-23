@@ -4,49 +4,12 @@
 </div>
 
 <div class="container" style="overflow-x: scroll;white-space: nowrap;">
-  <div class="card" style="width: 18rem; display:inline-block; margin: 0 10px 0 0;" *ngFor="let block of blocks" [class.border-primary]="isSelectedBlock(block)" (click)="showTransactions(block)">
-    <div class="card-body">
-      <h5 class="card-title">Block {{ getBlockNumber(block) }}</h5>
-    </div>
-
-     <ul class="list-group list-group-flush">
-	    <li class="list-group-item">
-	    	<span class="">Hash</span>
-	    	<br>
-	    	<div class="text-truncate text-muted">
-	    		<small>{{ block.hash }}</small>
-	    	</div>
-
-			<br>
-			<span class="">Hash of previous block</span>
-	    	<br>
-
-	    	<div class="text-truncate text-muted">
-	    		<small>{{ block.previousHash }}</small>
-	    	</div>
-	    </li>
-
-	    <li class="list-group-item">
-	    	<span class="">Nonce</span><br>
-	    	<div class="text-truncate text-muted">
-	    		<small>{{ block.nonce }}</small>
-	    	</div>
-	    </li>
-
-	    <li class="list-group-item">
-	    	<span class="">Timestamp</span><br>
-	    	<div class="text-truncate text-muted">
-	    		<small>{{ block.timestamp }}</small>
-	    	</div>
-	    </li>
-	  </ul>
-
-	  <div class="card-body">
-	  	<span class="card-link" (click)="showTransactions(block);" *ngIf="!blockHasTx(block)">Block has no transactions</span>
-
-	    <a href="#" class="card-link" (click)="showTransactions(block);" *ngIf="blockHasTx(block)">Includes {{block.transactions.length}} transactions</a>
-	  </div>
-  </div>
+	<app-block-view 
+		*ngFor="let block of blocks" 
+		[block]="block" 
+		[selectedBlock]="selectedBlock"
+		(click)="showTransactions(block)"
+	></app-block-view>
 </div>
 
 <br><br>

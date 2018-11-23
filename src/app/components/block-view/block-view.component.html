@@ -1,9 +1,42 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+<div class="card" style="width: 18rem; display:inline-block; margin: 0 10px 0 0;" [class.border-primary]="isSelectedBlock()">
+    <div class="card-body">
+      <h5 class="card-title">Block {{ getBlockNumber(block) }}</h5>
+    </div>
+
+     <ul class="list-group list-group-flush">
+	    <li class="list-group-item">
+	    	<span class="">Hash</span>
+	    	<br>
+	    	<div class="text-truncate text-muted">
+	    		<small>{{ block.hash }}</small>
+	    	</div>
+
+			<br>
+			<span class="">Hash of previous block</span>
+	    	<br>
+
+	    	<div class="text-truncate text-muted">
+	    		<small>{{ block.previousHash }}</small>
+	    	</div>
+	    </li>
+
+	    <li class="list-group-item">
+	    	<span class="">Nonce</span><br>
+	    	<div class="text-truncate text-muted">
+	    		<small>{{ block.nonce }}</small>
+	    	</div>
+	    </li>
+
+	    <li class="list-group-item">
+	    	<span class="">Timestamp</span><br>
+	    	<div class="text-truncate text-muted">
+	    		<small>{{ block.timestamp }}</small>
+	    	</div>
+	    </li>
+	  </ul>
+
+	  <div class="card-body">
+	  	<span class="card-link" *ngIf="!blockHasTx()">Block has no transactions</span>
+	  	<span class="card-link" *ngIf="blockHasTx()">Contains {{block.transactions.length}} transactions</span>
+	  </div>
   </div>
-</div>
