@@ -1,4 +1,9 @@
 <div class="container">
+
+	<div class="alert alert-success" role="alert" *ngIf="justAddedTx">
+		Transaction created successfully!
+	</div>
+
 	<h1>Pending transactions</h1>
 	<p>These transactions are waiting to be included in the next block. Next block is created when you start the mining process.</p>
 

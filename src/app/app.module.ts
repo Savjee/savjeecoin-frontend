@@ -11,7 +11,6 @@ import { BlockchainService } from './services/blockchain.service';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 import { CreateTransactionComponent } from './pages/create-transaction/create-transaction.component';
-import { CreateTransactionSuccessComponent } from './pages/create-transaction-success/create-transaction-success.component';
 import { PendingTransactionsComponent } from './pages/pending-transactions/pending-transactions.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { PendingTransactionsComponent } from './pages/pending-transactions/pendi
     SettingsComponent,
     TransactionsTableComponent,
     CreateTransactionComponent,
-    CreateTransactionSuccessComponent,
     PendingTransactionsComponent
   ],
   imports: [

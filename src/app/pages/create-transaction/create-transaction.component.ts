@@ -35,7 +35,7 @@ export class CreateTransactionComponent implements OnInit {
 		return;
 	}
   	
-	this.router.navigate(['/new/transaction/success']);
+	this.router.navigate(['/new/transaction/pending', { addedTx: true }]);
 
   	this.newTx = new Transaction();
   }
