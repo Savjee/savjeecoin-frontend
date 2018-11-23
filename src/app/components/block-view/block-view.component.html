@@ -7,7 +7,7 @@
 	    <li class="list-group-item">
 	    	<span class="">Hash</span>
 	    	<br>
-	    	<div class="text-truncate text-muted">
+	    	<div class="text-truncate" [style.color]="'#' + block.hash.substring(0,6)">
 	    		<small>{{ block.hash }}</small>
 	    	</div>
 
@@ -15,7 +15,7 @@
 			<span class="">Hash of previous block</span>
 	    	<br>
 
-	    	<div class="text-truncate text-muted">
+	    	<div class="text-truncate" [style.color]="'#' + block.previousHash.substring(0,6)">
 	    		<small>{{ block.previousHash }}</small>
 	    	</div>
 	    </li>
