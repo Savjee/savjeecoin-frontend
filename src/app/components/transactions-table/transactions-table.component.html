@@ -1,6 +1,6 @@
 <p *ngIf="transactions.length === 0">This block has no transactions</p>
 
-<table class="table" *ngIf="transactions.length > 0">
+<table class="table table-hover table-striped" *ngIf="transactions.length > 0">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -14,11 +14,13 @@
   <tbody>
     <tr *ngFor="let tx of transactions; index as index">
       <td>{{index}}</td>
-      <td>
+      <td class="text-truncate" style="max-width: 100px;">
         {{tx.fromAddress}}
         <span *ngIf="tx.fromAddress === null">System</span>
       </td>
-      <td>{{tx.toAddress}}</td>
+      <td class="text-truncate" style="max-width: 100px;">
+          {{tx.toAddress}}
+      </td>
       <td>
         {{tx.amount}}
         <span *ngIf="tx.fromAddress === null" class="text-muted"><br><small>(Block reward)</small></span>
