@@ -5,18 +5,18 @@
 	<br>
 
 	<div class="form-group">
-	    <label for="fromAddress">From</label>
+	    <label for="fromAddress">From address</label>
 	    <input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" [(ngModel)]="ownWalletKey.publicKey" disabled>
 	    <small id="fromAddressHelp" class="form-text text-muted">
-	    	You can only send money from your own wallet (the one of which you have both the public and private key)
+	    	This is your wallet address. You cannot change it because you can only spend your own coins.
 	    </small>
   	</div>
 
   	<div class="form-group">
-	    <label for="toAddress">To</label>
+	    <label for="toAddress">To address</label>
 	    <input type="text" class="form-control" id="toAddress" aria-describedby="toAddressHelp" [(ngModel)]="newTx.toAddress">
 	    <small id="toAddressHelp" class="form-text text-muted">
-	    	The address of the wallet where you want to send the money to.
+	    	The address of the wallet where you want to send the money to. You can type random text here (if you are not interested in recovering the funds)
 	    </small>
   	</div>
 
