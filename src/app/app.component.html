@@ -5,13 +5,9 @@
   </a>
 
   <div>
-    <button class="btn btn-outline-light" *ngIf="thereArePendingTransactions()">
+    <button routerLink="/new/transaction/pending" class="btn btn-outline-light" *ngIf="thereArePendingTransactions()">
       Pending transactions 
       <span class="badge badge-light">{{blockchain.pendingTransactions.length}}</span>
-    </button>
-    &nbsp;
-    <button class="btn btn-outline-light" *ngIf="thereArePendingTransactions()">
-      Start mining
     </button>
     &nbsp;
     <button routerLink="/settings" class="btn btn-outline-light">
