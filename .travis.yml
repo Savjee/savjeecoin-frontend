@@ -7,16 +7,15 @@ branches:
   only:
   - master
 
-cache:
-  directories:
-    - node_modules
+#cache:
+#  directories:
+#    - node_modules
 
 install:
-  - npm install -g yarn
+  - npm install
 
 script:
-  - yarn install
-  - yarn build --base-href https://savjee.github.io/savjeecoin-frontend/
+  - ng build --base-href https://savjee.github.io/savjeecoin-frontend/ --prod
 
 deploy:
   provider: pages
