@@ -15,7 +15,9 @@
     <tr *ngFor="let tx of transactions; index as index">
       <td>{{index}}</td>
       <td class="text-truncate" style="max-width: 100px;">
-        {{tx.fromAddress}}
+
+        <a [routerLink]="['/wallet', tx.fromAddress]" *ngIf="tx.fromAddress !== null">{{tx.fromAddress}}</a>
+
         <span *ngIf="tx.fromAddress === null">System</span>
 
         <span class="text-muted" *ngIf="blockchainService.addressIsFromCurrentUser(tx.fromAddress)">
@@ -23,7 +25,7 @@
         </span>
       </td>
       <td class="text-truncate" style="max-width: 100px;">
-          {{tx.toAddress}}
+          <a [routerLink]="['/wallet', tx.toAddress]">{{tx.toAddress}}</a>
 
           <span class="text-muted" *ngIf="blockchainService.addressIsFromCurrentUser(tx.toAddress)">
             <br><small>(That's yours!)</small>
