@@ -7,12 +7,11 @@ import { BlockchainService } from '../../services/blockchain.service';
   styleUrls: ['./transactions-table.component.scss']
 })
 export class TransactionsTableComponent implements OnInit {
-	@Input()
-	public transactions = [];
+  @Input()
+  public transactions = [];
 
   constructor(public blockchainService: BlockchainService) { }
 
   ngOnInit() {
   }
-
 }

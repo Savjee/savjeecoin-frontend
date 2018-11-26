@@ -7,11 +7,11 @@ import { PendingTransactionsComponent } from './pages/pending-transactions/pendi
 import { WalletBalanceComponent } from './pages/wallet-balance/wallet-balance.component';
 
 const routes: Routes = [
-	{path: '', component: BlockchainViewerComponent },
-	{path: 'settings', component: SettingsComponent},
-	{path: 'new/transaction', component: CreateTransactionComponent },
-	{path: 'new/transaction/pending', component: PendingTransactionsComponent },
-	{path: 'wallet/:address', component: WalletBalanceComponent },
+  {path: '', component: BlockchainViewerComponent },
+  {path: 'settings', component: SettingsComponent},
+  {path: 'new/transaction', component: CreateTransactionComponent },
+  {path: 'new/transaction/pending', component: PendingTransactionsComponent },
+  {path: 'wallet/:address', component: WalletBalanceComponent },
 ];
 
 @NgModule({

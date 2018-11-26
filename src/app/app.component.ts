@@ -7,15 +7,16 @@ import { BlockchainService } from './services/blockchain.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-	public blockchain;
+  public blockchain;
 
-	constructor(private blockchainService: BlockchainService){
-		this.blockchain = blockchainService.blockchainInstance;
-	}
+  constructor(private blockchainService: BlockchainService) {
+    this.blockchain = blockchainService.blockchainInstance;
+  }
+
   ngOnInit() {
   }
 
-  thereArePendingTransactions(){
-  	return this.blockchain.pendingTransactions.length > 0;
+  thereArePendingTransactions() {
+    return this.blockchain.pendingTransactions.length > 0;
   }
 }

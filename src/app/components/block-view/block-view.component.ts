@@ -7,32 +7,31 @@ import { BlockchainService } from '../../services/blockchain.service';
   styleUrls: ['./block-view.component.scss']
 })
 export class BlockViewComponent implements OnInit {
-	@Input()
-	public block;
+  @Input()
+  public block;
 
-	@Input()
-	public selectedBlock;
+  @Input()
+  public selectedBlock;
 
-	private blocksInChain;
+  private blocksInChain;
 
   constructor(private blockchainService: BlockchainService) {
-  	this.blocksInChain = blockchainService.blockchainInstance.chain;
+    this.blocksInChain = blockchainService.blockchainInstance.chain;
   }
 
 
   ngOnInit() {
   }
 
-  blockHasTx(){
-  	return this.block.transactions.length > 0;
+  blockHasTx() {
+    return this.block.transactions.length > 0;
   }
 
-  isSelectedBlock(){
-  	return this.block === this.selectedBlock;
+  isSelectedBlock() {
+    return this.block === this.selectedBlock;
   }
 
-  getBlockNumber(){
-  	return this.blocksInChain.indexOf(this.block) + 1;
+  getBlockNumber() {
+    return this.blocksInChain.indexOf(this.block) + 1;
   }
-
 }

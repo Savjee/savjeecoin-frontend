@@ -8,20 +8,20 @@ import { BlockchainService } from '../../services/blockchain.service';
   styleUrls: ['./wallet-balance.component.scss']
 })
 export class WalletBalanceComponent implements OnInit {
-	public walletAddress = '';
+  public walletAddress = '';
   public balance = 0;
   public transactions = [];
 
   constructor(private route: ActivatedRoute, private blockchainService: BlockchainService) {}
 
   ngOnInit() {
-  	this.route.params.subscribe( (params) => {
+    this.route.params.subscribe( (params) => {
         this.walletAddress = params['address'];
 
         const blockchain = this.blockchainService.blockchainInstance;
         this.balance = blockchain.getBalanceOfAddress(this.walletAddress);
         this.transactions = blockchain.getAllTransactionsForWallet(this.walletAddress);
-  	});
+    });
   }
 
 }

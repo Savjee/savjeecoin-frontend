@@ -7,13 +7,12 @@ import { BlockchainService } from '../../services/blockchain.service';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-	public blockchain;
+  public blockchain;
 
   constructor(private blockchainService: BlockchainService) {
-  	this.blockchain = blockchainService.blockchainInstance;
+    this.blockchain = blockchainService.blockchainInstance;
   }
 
   ngOnInit() {
   }
-
 }
