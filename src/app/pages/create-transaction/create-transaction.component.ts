@@ -29,7 +29,7 @@ export class CreateTransactionComponent implements OnInit {
     newTx.signTransaction(this.ownWalletKey.keyObj);
 
     try {
-      this.blockchainService.blockchainInstance.addTransaction(this.newTx);
+      this.blockchainService.addTransaction(this.newTx);
     } catch (e) {
       alert(e);
       return;

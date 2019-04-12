@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Blockchain, Block, Transaction } from 'SavjeeCoin/src/blockchain';
+import { Blockchain } from 'SavjeeCoin/src/blockchain';
 import EC from 'elliptic';
 
 @Injectable({
@@ -36,6 +36,9 @@ export class BlockchainService {
     });
 
     console.log(this.walletKeys);
+  }
+  addTransaction(tx) {
+    this.blockchainInstance.addTransaction(tx);
   }
 }
 
