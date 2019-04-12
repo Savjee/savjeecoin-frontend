@@ -8,6 +8,7 @@ import { BlockchainService } from './services/blockchain.service';
 })
 export class AppComponent implements OnInit {
   public blockchain;
+  public showInfoMessage = true;
 
   constructor(private blockchainService: BlockchainService) {
     this.blockchain = blockchainService.blockchainInstance;
@@ -18,5 +19,9 @@ export class AppComponent implements OnInit {
 
   thereArePendingTransactions() {
     return this.blockchain.pendingTransactions.length > 0;
+  }
+
+  dismissInfoMessage() {
+    this.showInfoMessage = false;
   }
 }
