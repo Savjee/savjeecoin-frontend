@@ -37,6 +37,11 @@ export class BlockchainService {
 
     console.log(this.walletKeys);
   }
+
+  getPendingTransactions() {
+    return this.blockchainInstance.pendingTransactions;
+  }
+
   addTransaction(tx) {
     this.blockchainInstance.addTransaction(tx);
   }

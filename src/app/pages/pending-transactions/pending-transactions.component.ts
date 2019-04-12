@@ -13,7 +13,7 @@ export class PendingTransactionsComponent implements OnInit {
   public justAddedTx = false;
 
   constructor(private blockchainService: BlockchainService, private router: Router, private route: ActivatedRoute) {
-    this.pendingTransactions = blockchainService.blockchainInstance.pendingTransactions;
+    this.pendingTransactions = blockchainService.getPendingTransactions();
   }
 
   ngOnInit() {
