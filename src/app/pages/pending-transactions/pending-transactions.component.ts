@@ -12,10 +12,12 @@ export class PendingTransactionsComponent implements OnInit {
   public miningInProgress = false;
   public justAddedTx = false;
 
+  // Sets this.pendingTransactions to all currentt pending transactions
   constructor(private blockchainService: BlockchainService, private router: Router, private route: ActivatedRoute) {
     this.pendingTransactions = blockchainService.getPendingTransactions();
   }
 
+  // 
   ngOnInit() {
     if (this.route.snapshot.paramMap.get('addedTx')) {
       this.justAddedTx = true;
@@ -26,6 +28,10 @@ export class PendingTransactionsComponent implements OnInit {
     }
   }
 
+  // Sets this.miningInProgress to true
+  // Tells the blockchain to put all pending transactions into a block to mine
+  // Once the mining is complete, this.miningInProgress is set to false
+  // Then it will forward the user to the home page
   minePendingTransactions() {
     this.miningInProgress = true;
     this.blockchainService.minePendingTransactions();

@@ -14,6 +14,10 @@ export class WalletBalanceComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private blockchainService: BlockchainService) {}
 
+  // Sets this.walletAddress to the requested address
+  // Sets blockchain equal to the current blockchainInstance
+  // Sets balance equal the balance of the address
+  // Sets transactions equal to all transactions that include the address
   ngOnInit() {
     this.route.params.subscribe( (params) => {
         this.walletAddress = params['address'];

@@ -1,0 +1,35 @@
+<div class="container">
+	<!-- Used for future plans for multiple wallets -->
+    <!-- <button (click)="generateNewWallet()" class="btn btn-primary float-right">
+      Create New Wallet
+	</button> -->
+	
+	<h1>Wallet details</h1>
+
+	<!-- Already set up for future plans of multiple wallets -->
+	<div *ngFor="let wallet of publicWallets">
+
+		<p style="word-wrap:break-word;">
+			<strong>Address:</strong>
+			<br>
+			{{wallet.publicKey}}
+		</p>
+
+		<p>
+			<strong>Balance:</strong>
+			<br>
+			{{ wallet.balance }}
+		</p>
+
+		<hr>
+
+		<h1>Transactions</h1>
+		<p *ngIf="transactions.length === 0">This wallet has made no transactions (yet)</p>
+		<app-transactions-table
+			[transactions]="wallet.transactions"
+			*ngIf="wallet.transactions.length > 0"
+		></app-transactions-table>
+
+	</div>
+
+</div>

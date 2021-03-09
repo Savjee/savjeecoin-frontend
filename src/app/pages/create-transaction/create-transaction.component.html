@@ -5,8 +5,18 @@
 	<br>
 
 	<div class="form-group">
-	    <label for="fromAddress">From address</label>
-	    <input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" [(ngModel)]="ownWalletKey.publicKey" disabled>
+		<!-- Used for future plans of multiple wallets -->
+		
+		<!-- <label for="fromAddress">From address</label>
+		<select class="custom-select" id='addresses' name='addresses' [(ngModel)]="walletSelected">
+			<option *ngFor="let wallet of wallets" [ngValue]="wallet">
+				{{wallet.publicKey}}
+			</option>  
+		</select> 
+		<small id="fromAddressHelp" class="form-text text-muted">
+	    	This is a list of your wallet addresses. You cannot change it because you can only spend your own coins.
+	    </small> -->
+		<input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" [(ngModel)]="ownWalletKey.publicKey" disabled>
 	    <small id="fromAddressHelp" class="form-text text-muted">
 	    	This is your wallet address. You cannot change it because you can only spend your own coins.
 	    </small>
