@@ -23,7 +23,6 @@
     "@angular/router": "^11.2.4",
     "SavjeeCoin": "github:SavjeeTutorials/SavjeeCoin#5cc294c488604546526bf277eceef9ea443b762b",
     "core-js": "^2.6.5",
-    "node-sass": "^4.12.0",
     "rxjs": "~6.6.6",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
