@@ -27,9 +27,7 @@
               </span>
             </div>
             <ng-template #third>
-              <ng-template *ngIf="tx.fromAddress !== null">
                 <a [routerLink]="['/wallet', tx.fromAddress]">{{tx.fromAddress}}</a>
-              </ng-template>
             </ng-template>
           </ng-template>
         </td>

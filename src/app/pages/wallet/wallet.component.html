@@ -7,29 +7,29 @@
 	<h1>Wallet details</h1>
 
 	<!-- Already set up for future plans of multiple wallets -->
-	<div *ngFor="let wallet of publicWallets">
+	<!-- <div *ngFor="let wallet of publicWallets"> -->
 
-		<p style="word-wrap:break-word;">
-			<strong>Address:</strong>
-			<br>
-			{{wallet.publicKey}}
-		</p>
+	<p style="word-wrap:break-word;">
+		<strong>Address:</strong>
+		<br>
+		{{publicWallets[0].publicKey}}
+	</p>
 
-		<p>
-			<strong>Balance:</strong>
-			<br>
-			{{ wallet.balance }}
-		</p>
+	<p>
+		<strong>Balance:</strong>
+		<br>
+		{{ publicWallets[0].balance }}
+	</p>
 
-		<hr>
+	<hr>
 
-		<h1>Transactions</h1>
-		<p *ngIf="transactions.length === 0">This wallet has made no transactions (yet)</p>
-		<app-transactions-table
-			[transactions]="wallet.transactions"
-			*ngIf="wallet.transactions.length > 0"
-		></app-transactions-table>
+	<h1>Transactions</h1>
+	<p *ngIf="transactions.length === 0">This wallet has made no transactions (yet)</p>
+	<app-transactions-table
+		[transactions]="publicWallets[0].transactions"
+		*ngIf="publicWallets[0].transactions.length > 0"
+	></app-transactions-table>
 
-	</div>
+	<!-- </div> -->
 
 </div>

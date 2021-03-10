@@ -7,6 +7,7 @@ import { BlockchainService } from '../../services/blockchain.service';
 })
 export class BlockchainViewerComponent implements OnInit {
   public blocks = [];
+  public blockchain;
   public selectedBlock = null;
 
   // Sets this.blocks to the array of blocks in the blockchain
@@ -14,11 +15,16 @@ export class BlockchainViewerComponent implements OnInit {
   // Logs a list of all blocks in the console
   constructor(private blockchainService: BlockchainService) {
     this.blocks = blockchainService.blockchainInstance.chain;
+    this.blockchain = blockchainService.blockchainInstance;
     this.selectedBlock = this.blocks[0];
     console.log(this.blocks);
   }
 
   ngOnInit() {
+  }
+
+  loadTestData() {
+    this.blockchainService.loadTestData();
   }
 
   // Logs the block passed in
