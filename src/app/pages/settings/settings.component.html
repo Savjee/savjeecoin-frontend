@@ -1,14 +1,17 @@
 <div class="container">
   <h1>Settings</h1>
-  <p>Control how the blockchain behaves when new transactions or blocks are created. Changes are automatically saved.</p>
+  <p>Control how the blockchain behaves when new transactions or blocks are created. <b>Changes are automatically saved.</b> </p>
 
   <br>
 
   <div class="form-group">
-    <label for="difficulty">Difficulty</label>
-    <input type="number" class="form-control" id="difficulty" aria-describedby="difficultyHelp" [(ngModel)]="blockchain.difficulty">
+    <label for="difficulty">Difficulty: {{ diff }}</label>
+    <div class="range w-100">
+      <input #difficulty type="range" class="form-range w-100" min="0" max="10" step="1" id="difficulty" aria-describedby="difficultyHelp" [(ngModel)]="blockchain.difficulty" (ngModelChange)="updateDiffLabel(difficulty.value);">
+    </div>
     <small id="difficultyHelp" class="form-text text-muted">
-    	Difficulty controls how long the mining process takes. Higher numbers will make mining a lot slower!
+      Difficulty controls how long the mining process takes. Higher numbers will make mining a lot slower!
+      <br>We put a limit of 10 just for demonstrational purposes. This can actually go up to 64!
     	<br>Default: 2
     </small>
   </div>

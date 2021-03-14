@@ -13,6 +13,7 @@ import { TransactionsTableComponent } from './components/transactions-table/tran
 import { CreateTransactionComponent } from './pages/create-transaction/create-transaction.component';
 import { PendingTransactionsComponent } from './pages/pending-transactions/pending-transactions.component';
 import { WalletBalanceComponent } from './pages/wallet-balance/wallet-balance.component';
+import { WalletComponent } from './pages/wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WalletBalanceComponent } from './pages/wallet-balance/wallet-balance.co
     TransactionsTableComponent,
     CreateTransactionComponent,
     PendingTransactionsComponent,
-    WalletBalanceComponent
+    WalletBalanceComponent,
+    WalletComponent
   ],
   imports: [
     BrowserModule,
