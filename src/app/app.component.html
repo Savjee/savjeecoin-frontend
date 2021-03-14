@@ -1,22 +1,36 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="/">
     <img src="assets/img/logo-savjee.svg" width="30" height="30" class="d-inline-block align-top" alt="">
     &nbsp;SavjeeCoin
   </a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div>
-    <button routerLink="/new/transaction/pending" class="btn btn-outline-light" *ngIf="thereArePendingTransactions()">
-      Pending transactions
-      <span class="badge badge-light">{{blockchain.pendingTransactions.length}}</span>
-    </button>
-    &nbsp;
-    <button routerLink="/settings" class="btn btn-outline-light">
-      Settings
-    </button>
-    &nbsp;
-    <button routerLink="/new/transaction" class="btn btn-outline-light">
-      Create transaction
-    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <hr>
+    <ul class="navbar-nav ml-auto">
+      <!-- Used to put items on right side-->
+    </ul>
+    <ul class="navbar-nav ml-auto float-right">
+      <li class="nav-item">
+        <button class="btn btn-outline-info" routerLink="/new/transaction/pending" *ngIf="thereArePendingTransactions()">
+          Pending transactions
+          <span class="badge badge-light">{{blockchain.pendingTransactions.length}}</span>
+        </button>
+      </li>
+      <li class="nav-item ml-2">
+        <button class="btn btn-outline-primary" routerLink="/new/transaction">
+          <span>&#43;</span> Create transaction
+        </button>
+      </li>
+      <li class="nav-item ml-2">
+        <a class="nav-link" routerLink="/settings">
+          <i class="fa fa-gear" style="font-size:24px;"></i>
+        </a>
+      </li>
+    </ul>
   </div>
 </nav>
 
