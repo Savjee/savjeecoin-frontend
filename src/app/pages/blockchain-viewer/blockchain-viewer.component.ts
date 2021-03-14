@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BlockchainService } from '../../services/blockchain.service';
-import $ from 'jquery';
 
 @Component({
   selector: 'app-blockchain-viewer',
