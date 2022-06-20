@@ -2,14 +2,14 @@ name: Angular GitHub CI/CD
 on:
   push:
 #    branches:
-#      - main
+#      - master
 jobs:
   ci:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [latest]
+        node-version: [18]
 
     steps:
       - uses: actions/checkout@v2
