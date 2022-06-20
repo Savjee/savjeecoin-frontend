@@ -40,7 +40,7 @@ jobs:
 
       - name: Build
         run: |
-          npm run build -- --prod
+          npm run prod
 
 #      - name: Create Release
 #        uses: actions/create-release@v1
