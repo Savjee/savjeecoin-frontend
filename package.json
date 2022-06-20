@@ -21,7 +21,7 @@
     "@angular/platform-browser": "^14.0.2",
     "@angular/platform-browser-dynamic": "^14.0.2",
     "@angular/router": "^14.0.2",
-    "angular-cli-ghpages": "^0.1.7",
+    "angular-cli-ghpages": "^1.0.0",
     "rxjs": "^6.6.7",
     "SavjeeCoin": "github:SavjeeTutorials/SavjeeCoin#5cc294c488604546526bf277eceef9ea443b762b",
     "tslib": "^2.0.0",
