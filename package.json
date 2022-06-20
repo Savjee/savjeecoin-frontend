@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prod": "ng build --aot --prod --progress false --base-href \"https://savjee.github.io/savjeecoin-frontend/\"",
+    "prod": "ng build --aot --progress false --base-href \"https://savjee.github.io/savjeecoin-frontend/\"",
     "deploy": "ng deploy --base-href=/savjeecoin-frontend/"
   },
   "private": true,
