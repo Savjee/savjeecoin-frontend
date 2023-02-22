@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "./dark.scss";
+
+body,
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}

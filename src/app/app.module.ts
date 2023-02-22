@@ -14,8 +14,6 @@ import { CreateTransactionComponent } from './pages/create-transaction/create-tr
 import { PendingTransactionsComponent } from './pages/pending-transactions/pending-transactions.component';
 import { WalletBalanceComponent } from './pages/wallet-balance/wallet-balance.component';
 
-import { ThemeSwitcherModule } from './theme/theme.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +29,6 @@ import { ThemeSwitcherModule } from './theme/theme.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ThemeSwitcherModule
   ],
   providers: [
     BlockchainService
