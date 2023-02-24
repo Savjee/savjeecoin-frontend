@@ -28,7 +28,7 @@ import { WalletBalanceComponent } from './pages/wallet-balance/wallet-balance.co
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     BlockchainService

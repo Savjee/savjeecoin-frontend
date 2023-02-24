@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+$bg-dark-body-01: #343a40;
+$bg-dark-body-02: #3d434a;
+$bg-dark-body-03: #d1d1d1;
+
+$txt-dark-body-01: #c4c8d4;
+$txt-dark-body-02: #424242;
+
+@media (prefers-color-scheme: dark) {
+  .main-body {
+    background-color: $bg-dark-body-01;
+    color: $txt-dark-body-01;
+  }
+
+  .navbar {
+    box-shadow: 2px 4px 8px black;
+  }
+
+  .card {
+    background-color: $bg-dark-body-02 !important;
+    color: $txt-dark-body-01;
+    box-shadow: 2px 2px 8px black;
+
+    .list-group,
+    .list-group-item {
+      background-color: $bg-dark-body-03;
+    }
+  }
+
+  .table {
+    background-color: $bg-dark-body-01;
+    color: $txt-dark-body-01;
+    box-shadow: 4px 6px 10px black;
+
+    tbody {
+      background-color: $bg-dark-body-03;
+      color: $txt-dark-body-02;
+    }
+  }
+}
+
